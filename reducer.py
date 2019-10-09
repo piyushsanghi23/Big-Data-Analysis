@@ -26,10 +26,8 @@ coldestday = None
 hottestdaystationid = None
 coldestdaystationid = None
 
-
-
 for line in sys.stdin:
-    
+
     line = line.strip()
 
     date, stationid, element, value = line.split('\t', 3)
@@ -40,7 +38,6 @@ for line in sys.stdin:
     except ValueError:
         continue
 
-    
     if currentyear is None:
         currentyear = year
 
@@ -90,7 +87,7 @@ for line in sys.stdin:
                         coldestweatherstationsvalues[idx] = value
                         coldestweatherstationsids[idx] = stationid
                         break
- else:
+    else:
         print '%s' % currentyear
         print 'Average TMAX\t%s\t' % (tmax * 1.0 / tmaxct)
         print 'Average TMIN\t%s\t' % (tmin * 1.0 / tminct)
@@ -120,18 +117,15 @@ for line in sys.stdin:
             mintmn = value
             tminct = 1
 
-        
         if value < coldestvalue:
             coldestvalue = value
             coldestdaystationid = stationid
             coldestday = date
-        
+
         if value > hottestvalue:
             hottestvalue = value
             hottestdaystationid = stationid
             hottestday = date
-
-
 
 if year == currentyear:
     print '%s' % currentyear
@@ -144,6 +138,3 @@ if year == currentyear:
     print '\n'
     print 'Hottest Day\t%s\t - StationID\t%s' % (hottestday, hottestdaystationid)
     print 'Coldest Day\t%s\t - StationID\t%s' % (coldestday, coldestdaystationid)
-
-
-                                                                                                                                                                                       1,1           Top
