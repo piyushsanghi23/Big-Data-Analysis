@@ -1,5 +1,4 @@
-# Cloud-Project-2
-
+# Big Data Analysis
 
 The project is done in hadoop eecs cluster in mapreduce processing in python.
 
